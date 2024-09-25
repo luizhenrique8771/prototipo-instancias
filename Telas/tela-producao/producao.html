@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="producao.css">
+    <link rel="icon" href="/Telas/header-logo-icon.svg" type="image/x-icon">
+    <title>Instâncias de Produção</title>
+</head>
+<body>
+    <header>
+        <h1>Instâncias de Produção <span>Ativa</span></h1>
+    </header>
+
+    <img src="/Telas/header-logo-icon.svg" alt="Logo Oi">
+    
+    <main>
+       <section id="section">
+        <!-- Ao clicar, executa o health check -->
+        <p><a href="#" onclick="executarHealthCheck('SQL Server')"  onclick="event.preventDefault();">SQL Server: 100%</a></p>
+        <p class="p-online">Status: <span class="online">Online</span></p>
+        <p><a href="#" onclick="executarHealthCheck('Oracle')"  onclick="event.preventDefault();" href="javascript:void(0)">Oracle: 100%</a></p>
+        <p  class="p-online">Status: <span class="online">Online</span></p>
+        <p><a href="#" onclick="executarHealthCheck('MySQL')"  onclick="event.preventDefault();" href="javascript:void(0)">MySQL: 98%</a></p>
+        <p  class="p-online">Status: <span class="online">Online</span></p>
+        <p><a href="#" onclick="executarHealthCheck('MongoDB')"  onclick="event.preventDefault();" href="javascript:void(0)">MongoDB: 99%</a></p>
+        <p  class="p-online">Status: <span class="online">Online</span></p>
+       </section>
+
+       <!-- Div para exibir os resultados do health check -->
+       <section id="resultados">
+           <!-- Resultados do health check serão exibidos aqui -->
+       </section>
+
+       <!-- Botão para atualizar o health check -->
+       <section id="result">
+           <button onclick="atualizarHealthCheck()">Atualizar Health Check</button>
+       </section>
+
+       <a class="link" href="/Telas/tela-principal/index.html">Voltar à página inicial</a>
+    </main>
+
+    <footer>
+        Oi S/A. Todos os direitos reservados. CNPJ: 76.535.764/0001-43 
+    </footer>
+</body>
+</html>
+<script src="producao.js"></script>

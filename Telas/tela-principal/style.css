@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+img {
+    margin-top: 10px;
+    height: 60px;
+}
+
+main {
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.online {
+    color: green;
+    font-weight: bold;
+}
+
+.offline {
+    color: red;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #630091;
+}
+
+.styled-link {
+    text-decoration: none;
+    color: #4CAF50; /* Cor inicial do link */
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0.4rem;
+    padding: 0.3rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.styled-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #4CAF50; /* Cor de fundo ao passar o mouse */
+    transition: all 0.4s ease;
+}
+
+.styled-link:hover {
+    color: rgb(0, 0, 0); /* Muda a cor do texto ao passar o mouse */
+    border-color: #45a049;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.status-indicator {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.status-online {
+    background-color: green;
+}
+
+.status-offline {
+    background-color: red;
+}
+
+footer{
+    background-color: #4CAF50;
+padding: 1.1rem;
+text-align: center;
+color: #ffffff;
+}
+

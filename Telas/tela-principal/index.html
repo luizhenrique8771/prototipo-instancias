@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Telas/header-logo-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Controle das Instâncias</title>
+</head>
+
+<body>
+    <header>
+        <h1>Controle das Instâncias</h1>
+        <img src="/Telas/header-logo-icon.svg" alt="Logo Oi">
+    </header>
+
+    <main>
+        <ul>
+            <!-- Instâncias de Produção -->
+            <li>
+                <div class="section-header">
+                    <h2>Instâncias de Produção: ✔️</h2>
+                    <span class="status-indicator status-online">98% Online</span>
+                </div>
+                <section>
+                    <p><a onclick="executarHealthCheck('SQL Server'); event.preventDefault();">SQL Server: 100%</a></p>
+                    <p>Status: <span class="online">Online</span></p> 
+                    <a class="styled-link" href="/Telas/instancias-prod/sql.html">Consulte aqui as Instâncias do <strong>SQL Server</strong></a>   <br>
+
+                    <p><a href="#" onclick="executarHealthCheck('Oracle'); event.preventDefault();">Oracle: 100%</a></p>
+                    <p>Status: <span class="online">Online</span></p> 
+                    <a class="styled-link" href="/Telas/instancias-prod/oracle.html">Consulte aqui as Instâncias do Oracle</a>   <br>
+
+                    <p><a href="#" onclick="executarHealthCheck('MySQL'); event.preventDefault();">MySQL: 98%</a></p>
+                    <p>Status: <span class="online">Online</span></p>
+                    <a class="styled-link" href="/Telas/instancias-prod/mysql.html">Consulte aqui as Instâncias do MySQL</a>   <br>
+
+                    <p><a href="#" onclick="executarHealthCheck('MongoDB'); event.preventDefault();">MongoDB: 99%</a></p>
+                    <p>Status: <span class="online">Online</span></p>
+                    <a class="styled-link" href="/Telas/instancias-prod/mongodb.html">Consulte aqui as Instâncias do MongoDB</a>   <br>
+                </section>
+
+            </li>
+
+            <!-- Instâncias Não Produtivas -->
+            <li>
+                <div class="section-header">
+                    <h2>Instâncias Não Produtivas: ❌</h2>
+                    <span class="status-indicator status-online">100% Online</span>
+                </div>
+                <section>
+                    <!-- Ao clicar, executa o health check -->
+                    <p><a href="#" onclick="executarHealthCheck('SQL Server')">SQL Server: 100%</a></p>
+                    <p  class="p-online">Status: <span class="online">Online</span></p>
+                    <a class="styled-link" href="/Telas/instancias-nprod/sql.html">Consulte aqui as Instâncias não produtivas do SQL Server</a>   <br>
+
+                    <p><a href="#" onclick="executarHealthCheck('Oracle')">Oracle: 100%</a></p>
+                    <p  class="p-online">Status: <span class="online">Online</span></p> 
+                    <a class="styled-link" href="/Telas/instancias-nprod/oracle.html">Consulte aqui as Instâncias não produtivas do Oracle</a>   <br>
+
+                    <p><a href="#" onclick="executarHealthCheck('MySQL')">MySQL: 100%</a></p>
+                    <p  class="p-online">Status: <span class="online">Online</span></p> 
+                    <a class="styled-link" href="/Telas/instancias-nprod/mysql.html">Consulte aqui as Instâncias não produtivas do MySQL</a>   <br>
+
+                    <p><a href="#" onclick="executarHealthCheck('MongoDB')">MongoDB: 100%</a></p>
+                    <p  class="p-online">Status: <span class="online">Online</span></p>
+                    <a class="styled-link" href="/Telas/instancias-nprod/mongodb.html">Consulte aqui as Instâncias não produtivas do MongoDB</a>   <br>
+                </section>
+         
+                <!-- Div para exibir os resultados do health check -->
+                <section id="resultados">
+                    <!-- Resultados do health check serão exibidos aqui -->
+                </section>
+         
+                <section id="result">
+
+             </section>
+                <section id="resultados">
+                    <!-- Resultados do health check serão exibidos aqui -->
+                </section>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        Oi S/A. Todos os direitos reservados. CNPJ: 76.535.764/0001-43
+    </footer>
+    <script src="producao.js"></script>
+</body>
+
+</html>

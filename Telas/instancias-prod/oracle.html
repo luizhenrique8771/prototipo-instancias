@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instâncias - Oracle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/Telas/header-logo-icon.svg" type="image/x-icon">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    width: 900%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+header {
+    background-color: #a75900;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+.instancia {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.instancia h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #4CAF50;
+}
+
+.instancia .info {
+    margin-bottom: 20px;
+}
+
+.instancia p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.instancia button {
+    padding: 10px 20px;
+    background-color: #a75900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.instancia button:hover {
+    background-color: hsl(32, 100%, 43%);
+}
+
+.status-online {
+    color: green;
+    font-weight: bold;
+}
+
+.status-offline {
+    color: red;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #a75900;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    font-weight: 700;
+}
+
+.tag-a a{
+    text-align: center;
+    background-color: #45a049;
+    padding: 1rem;
+    border-radius: 3rem;
+    color: #fff;
+    text-decoration: none;
+    margin: auto auto;
+    font-weight: 700;
+}
+
+.tag-a{
+    text-align: center;
+    width: 13rem;
+    border-radius: 3rem;
+    color: #fff;
+    text-decoration: none;
+    margin: auto auto;
+}
+
+.tag-a:hover{
+    transform: scale(1.10);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+button{
+    font-size: 1rem;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Controle de Instâncias - Oracle</h1>
+            <p>Monitoramento em tempo real do status das instâncias</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="instancia">
+            <h2>Instância Principal</h2>
+            <div class="info">
+                <p><strong>Nome:</strong> OracleProd01</p>
+                <p><strong>Status:</strong> <span id="status-principal" class="status-online">Online</span></p>
+                <p><strong>CPU:</strong> 55%</p>
+                <p><strong>Memória:</strong> 72%</p>
+            </div>
+            <button onclick="atualizarStatus('status-principal')">Atualizar Status</button>
+        </section>
+
+        <section class="instancia">
+            <h2>Instância Backup</h2>
+            <div class="info">
+                <p><strong>Nome:</strong> OracleBackup01</p>
+                <p><strong>Status:</strong> <span id="status-backup" class="status-online">Online</span></p>
+                <p><strong>CPU:</strong> 30%</p>
+                <p><strong>Memória:</strong> 60%</p>
+            </div>
+            <button onclick="atualizarStatus('status-backup')">Atualizar Status</button>
+        </section>
+
+        <section class="instancia">
+            <h2>Instância de Teste</h2>
+            <div class="info">
+                <p><strong>Nome:</strong> OracleTest01</p>
+                <p><strong>Status:</strong> <span id="status-teste" class="status-offline">Offline</span></p>
+                <p><strong>CPU:</strong> N/A</p>
+                <p><strong>Memória:</strong> N/A</p>
+            </div>
+            <button onclick="atualizarStatus('status-teste')">Atualizar Status</button>
+        </section>
+    </main> <br>
+<div class="tag-a">
+    <a href="/Telas/tela-principal/index.html">Voltar a Página Inicial</a>
+</div>
+    <br><br>
+    <footer>
+        <p>© 2024 - Monitoramento Oracle | Oi/SA - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    function atualizarStatus(id) {
+        const statusElement = document.getElementById(id);
+
+        // Mostrar a mensagem de "atualizando status..."
+        const mensagemTemporaria = document.createElement('p');
+        mensagemTemporaria.textContent = 'Atualizando status...';
+        mensagemTemporaria.id = 'mensagem-temporaria';
+        statusElement.parentNode.insertBefore(mensagemTemporaria, statusElement);
+
+        // Simulação de atualização de status
+        setTimeout(function() {
+            // Remover a mensagem de "atualizando status..."
+            mensagemTemporaria.remove();
+
+            // Gerar o novo status (Online ou Offline)
+            const novoStatus = Math.random() > 0.5 ? 'Online' : 'Offline';
+            const statusClass = novoStatus === 'Online' ? 'status-online' : 'status-offline';
+
+            // Atualizar o status no DOM
+            statusElement.textContent = novoStatus;
+            statusElement.className = statusClass;
+        }, 2000); // Espera 2 segundos antes de atualizar o status
+    }
+
+</script>
